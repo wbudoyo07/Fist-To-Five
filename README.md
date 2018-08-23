@@ -1,6 +1,6 @@
 # Project2
 
-Our project is an app that links virtual store items to user review page via a QR Code scanner. 
+Our project is an app that links virtual store items to user a review page via a QR Code scanner.
 
 From a scanned QR code, The landing page will be a review prompt for the item. Once review is submitted, user can read other reviews.
 
