@@ -1,9 +1,15 @@
 <h1>results</h1>
  <ul id="example-list" class="list-group">
           {{#each dataInfo}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{id}}{{fname}}{{lname}}{{address}}</a>
-            
-          </li>
+
+        <ul class="text"{{this.id}}>
+            <li>ID: {{id}}</li>
+            <li>Name: {{fname}} {{lname}}</li>
+            <li>address: {{address}}</li>
+            <li>store Name: {{storeName}}</li>
+            <li>Description: {{description}}</li>
+            <li>Price: ${{price}}</li>
+        </ul>
+        <br>
           {{/each}}
         </ul>
