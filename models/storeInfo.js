@@ -1,6 +1,26 @@
 module.exports = function(sequelize, DataTypes) {
-  // "storeInfo" is name of the table
   var storeInfo = sequelize.define("storeInfo", {
+    fname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    lname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     storeName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -8,28 +28,21 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    storeAddress: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      len: [1]
-    },
-    storeQRcode: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [10]
+        len: [1]
       }
     },
-    storeReview: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      len: [1]
-    },
-    storePhoneNumber: {
+    price: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
     },
-    imageStore: {
+    img: {
       type: DataTypes.BLOB,
       allowNull: true
     }

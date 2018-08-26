@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "qrProjectDB",
+    "database": "masseuseDB",
     "host": "localhost",
     "dialect": "mysql",
     "port": 8889

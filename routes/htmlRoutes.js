@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var path = require ("path");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -15,11 +15,22 @@ module.exports = function(app) {
   app.get("/register", function(req, res) {
     db.storeInfo.findAll({}).then(function(dbStoreInfo) {
       res.render("register", {
-        titlePage: "Register Form",
+        titlePage: "Register Form"
+      });
+    });
+  });
+  app.get("/results", function(req, res) {
+    db.storeInfo.findAll({}).then(function(dbStoreInfo) {
+      res.render("results", {
+        titlePage: "results page",
         dataInfo: dbStoreInfo
       });
     });
   });
+
+  // app.get("/results", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/html/results.html"));
+  // });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
