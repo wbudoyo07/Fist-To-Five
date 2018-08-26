@@ -1,19 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="card-title">Example</h5>
-          <p>
-            <strong>ID</strong>: {{example.id}}</p>
-          <p>
-          <p>
-            <strong>Text</strong>: {{example.text}}</p>
-          <p>
-            <strong>Description:</strong> {{example.description}}</p>
-            <a href="/">← Back To Home</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <ul id="example-list" class="list-group">
+          {{#each dataInfo}}
+          <li>ID: {{this.id}}</li>
+          <li>First Name:{{this.fname}}</li>
+          <li>Last Name:{{this.lname}}</li>
+          <li>Address: {{this.address}}</li>
+          <li>Store Name:{{this.storeName}}</li>
+          <li>description: {{this.description}}</li>
+          <li>Pirce: $ {{this.price}}</li>
+          <br>
+          {{/each}}
+          <h1>{{dataInfo.this.id}}</h1>
+        </ul>
