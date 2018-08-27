@@ -1,5 +1,4 @@
 var db = require("../models");
-var path = require("path");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -11,8 +10,8 @@ module.exports = function(app) {
   });
 
   // register page
-  app.get("/register/:id", function(req, res) {
-    db.storeInfo.findAll({}).then(function(dbStoreInfo) {
+  app.get("/register/", function(req, res) {
+    db.storeInfo.findAll({}).then(function() {
       res.render("register", {
         titlePage: "Register Form",
         javascript: "register.js",
