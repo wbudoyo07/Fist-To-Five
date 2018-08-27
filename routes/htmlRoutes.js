@@ -19,9 +19,9 @@ module.exports = function(app) {
       });
     });
   });
-  app.get("/results/:storeName", function(req, res) {
+  app.get("/results/:routeName", function(req, res) {
     db.storeInfo
-      .findOne({ where: { storeName: req.params.storeName } })
+      .findOne({ where: { routeName: req.params.routeName } })
       .then(function(dbStoreInfo) {
         res.render("results", {
           titlePage: "Results",

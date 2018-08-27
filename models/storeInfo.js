@@ -1,5 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
   var storeInfo = sequelize.define("storeInfo", {
+    routeName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     fname: {
       type: DataTypes.STRING,
       allowNull: false,

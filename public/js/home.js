@@ -5,6 +5,7 @@ $(document).ready(function() {
     var userInput = $("#inputSearchBar")
       .val()
       .trim()
+      .replace(/\s+/g, "")
       .toLowerCase();
     if (event.keyCode === 13) {
       console.log(userInput);
@@ -16,7 +17,7 @@ $(document).ready(function() {
   function getStoreInfo(userInput) {
     $.get("/api/register", function(data) {
       for (var i = 0; i < data.length; i++) {
-        if (userInput === data[i].storeName.toLowerCase()) {
+        if (userInput === data[i].routeName) {
           window.location.href = "/results/" + userInput;
         } else {
           // alert("cannot find");
