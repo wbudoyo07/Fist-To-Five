@@ -1,48 +1,46 @@
-<div id="home">
+<div id="registration-form">
+  <h1>{{title}}</h1>
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{titlePage}}</h1>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="name-text">Store name</label>
-            <input type="text" id="storeName-text" class="form-control" aria-describedby="store-text" placeholder="Enter your store name">
-          </div>
-           <div class="form-group">
-            <label for="address-text">Store Address</label>
-            <input type="text" id="address-text" class="form-control" aria-describedby="address-text" placeholder="Enter your store address">
-          </div>
-           <div class="form-group">
-            <label for="QR-code">QR code</label>
-            <input type="text" id="QR-text" class="form-control" aria-describedby="QR-text" placeholder="Enter your QR code">
-          </div>
-          <div class="form-group">
-            <label for="phoneNumber">Phone Number</label>
-            <input type="number" id="Phone-number" class="form-control" aria-describedby="number" placeholder="Enter your Phone Number">
-          </div>
-          <div class="form-group">
-            <label for="review">review</label>
-            <textarea class="form-control" id="review" aria-describedby="review" placeholder="Enter your review Here!"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlFile1">Example file input</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>rendering</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+      <form>
+      <div class="form-group">
+        <label for="fname-text">First Name</label>
+        <input type="text" class="form-control" id="fname-text" aria-describedby="fname-text" placeholder="Enter your First Name">
+        <br>
+     </div>
+       <div class="form-group">
+        <label for="lname-text">Last Name</label>
+        <input type="text" class="form-control" id="lname-text" aria-describedby="lname-text" placeholder="Enter your Last Name">
+        <br>
+     </div>
+       <div class="form-group">
+        <label for="address-text"> Address</label>
+        <input type="text" class="form-control" id="address-text" aria-describedby="address-text" placeholder="Enter your address">
+        <br>
+     </div>
+       <div class="form-group">
+        <label for="storeName-text">Store Name</label>
+        <input type="text" class="form-control" id="storeName-text" aria-describedby="storeName-text" placeholder="Enter your Store Name">
+        <br>
+     </div>
+       <div class="form-group">
+        <label for="description-text">Description</label>
+        <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Enter your description">
+        <br>
+     </div>
+      <div class="form-group">
+        <label for="price-number">Price</label>
+        <input type="text" class="form-control" id="price-number" aria-describedby="price-number" placeholder="Enter your service price">
+        <br>
+     </div>
+    {{!-- <div class="form-group">
+        <label for="store-img">Upload your Image</label>
+        <input type="file" class="form-control-file" id="store-img">
+     </div> --}}
+     <br>
+        <button id="submit-register" class="btn btn-primary float-right">Submit</button>
     </div>
+    </form> 
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/register.js"></script>

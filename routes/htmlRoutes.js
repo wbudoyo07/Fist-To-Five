@@ -1,34 +1,40 @@
 var db = require("../models");
-
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    res.render("home", {
+      titlePage: "Home",
+      javascript: "home.js",
+      css: "home.css"
     });
   });
 
   // register page
-  app.get("/register", function(req, res) {
-    db.storeInfo.findAll({}).then(function(dbStoreInfo) {
+  app.get("/register/", function(req, res) {
+    db.storeInfo.findAll({}).then(function() {
       res.render("register", {
         titlePage: "Register Form",
-        dataInfo: dbStoreInfo
+        javascript: "register.js",
+        css: "register.css"
       });
     });
+  });
+  app.get("/results/:routeName", function(req, res) {
+    db.storeInfo
+      .findOne({ where: { routeName: req.params.routeName } })
+      .then(function(dbStoreInfo) {
+        res.render("results", {
+          titlePage: "Results",
+          javascript: "results.js",
+          css: "results.css",
+          dataInfo: dbStoreInfo
+        });
+      });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
+  // app.get("/results", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/html/results.html"));
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
