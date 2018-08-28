@@ -38,6 +38,16 @@ module.exports = function(app) {
       });
     });
   });
+  // load register page
+  app.get("/review/", function(req, res) {
+    db.storeInfo.findAll({}).then(function() {
+      res.render("review", {
+        titlePage: "Review",
+        javascript: "review.js",
+        css: "review.css"
+      });
+    });
+  });
   //load results page
   app.get("/results/:routeName", function(req, res) {
     db.storeInfo
