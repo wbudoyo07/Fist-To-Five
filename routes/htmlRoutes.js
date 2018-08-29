@@ -30,12 +30,10 @@ module.exports = function(app) {
   });
   // load register page
   app.get("/register/", function(req, res) {
-    db.storeInfo.findAll({}).then(function() {
-      res.render("register", {
-        titlePage: "Register Form",
-        javascript: "register.js",
-        css: "register.css"
-      });
+    res.render("register", {
+      titlePage: "Register Form",
+      javascript: "register.js",
+      css: "register.css"
     });
   });
   // load register page

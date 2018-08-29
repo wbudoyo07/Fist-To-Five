@@ -36,5 +36,15 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
   });
+
+  customerReviews.associate = function(models) {
+    // We're saying that a customerReviews should belong to an storeInfo
+    // customerReviews can't be created without storeInfo due to the foreign key constraint
+    customerReviews.belongsTo(models.storeInfo, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return customerReviews;
 };
