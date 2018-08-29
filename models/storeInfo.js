@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [5]
+        len: [1]
       }
     },
     address: {
@@ -65,12 +65,19 @@ module.exports = function(sequelize, DataTypes) {
     },
     QRcode: {
       type: DataTypes.TEXT,
-      allowNull: false
+      // allowNull: false
     },
     img: {
       type: DataTypes.BLOB,
       allowNull: true
     }
   });
+  storeInfo.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    storeInfo.hasMany(models.customerReviews, {
+      onDelete: "cascade"
+    });
+  };
   return storeInfo;
 };

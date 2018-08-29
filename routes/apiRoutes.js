@@ -3,7 +3,9 @@ var db = require("../models");
 module.exports = function(app) {
   //GET  store infomation data from registration
   app.get("/api/register", function(req, res) {
-    db.storeInfo.findAll({}).then(function(database) {
+    db.storeInfo.findAll({
+      include:[db.customerReviews]
+    }).then(function(database) {
       res.json(database);
     });
   });

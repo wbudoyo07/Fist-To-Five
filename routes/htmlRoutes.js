@@ -49,7 +49,7 @@ module.exports = function(app) {
   //load results page
   app.get("/results/:routeName", function(req, res) {
     db.storeInfo
-      .findOne({ where: { routeName: req.params.routeName } })
+      .findOne({ where: { routeName: req.params.routeName },include:[db.customerReviews] })
       .then(function(dbStoreInfo) {
         res.render("results", {
           titlePage: "Results",
@@ -59,9 +59,21 @@ module.exports = function(app) {
         });
       });
   });
-
+  // Load example page and pass in an example by id
+  app.get("/example/", function(req, res) {
+    db.storeInfo.findAll({include:[db.customerReviews]}).then(function(dbExample) {
+      console.log(dbExample);
+      res.render("example", {
+        example: dbExample
+      });
+    });
+  });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+
 };
+
+
