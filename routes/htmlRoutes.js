@@ -1,6 +1,6 @@
 var db = require("../models");
 module.exports = function(app) {
-  // Load index page
+  // Load home page
   app.get("/", function(req, res) {
     res.render("home", {
       titlePage: "Home",
@@ -8,8 +8,28 @@ module.exports = function(app) {
       css: "home.css"
     });
   });
-
-  // register page
+  
+  app.get("/login", function(req, res) {
+    res.render("login", {
+      titlePage: "Login",
+      javascript: "login.js",
+      css: "login.css"
+    });
+  });
+  // load owner information page
+  app.get("/ownerInfo", function(req, res) {
+    db.storeInfo
+      .findOne({ where: { routeName: req.params.routeName } })
+      .then(function(dbStoreInfo) {
+        res.render("ownerInfo", {
+          titlePage: "Info",
+          javascript: "ownerInfo.js",
+          css: "ownerInfo.css",
+          dataInfo: dbStoreInfo
+        });
+      });
+  });
+  // load register page
   app.get("/register/", function(req, res) {
     db.storeInfo.findAll({}).then(function() {
       res.render("register", {
@@ -19,6 +39,17 @@ module.exports = function(app) {
       });
     });
   });
+  // load register page
+  app.get("/review/", function(req, res) {
+    db.storeInfo.findAll({}).then(function() {
+      res.render("review", {
+        titlePage: "Review",
+        javascript: "review.js",
+        css: "review.css"
+      });
+    });
+  });
+  //load results page
   app.get("/results/:routeName", function(req, res) {
     db.storeInfo
       .findOne({ where: { routeName: req.params.routeName } })
@@ -31,10 +62,6 @@ module.exports = function(app) {
         });
       });
   });
-
-  // app.get("/results", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/html/results.html"));
-  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
