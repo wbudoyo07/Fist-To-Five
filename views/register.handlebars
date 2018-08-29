@@ -1,46 +1,56 @@
-<div id="registration-form">
-  <h1>{{title}}</h1>
-  <div class="container">
-    <div class="row">
-      <form>
-      <div class="form-group">
-        <label for="fname-text">First Name</label>
-        <input type="text" class="form-control" id="fname-text" aria-describedby="fname-text" placeholder="Enter your First Name">
-        <br>
-     </div>
-       <div class="form-group">
-        <label for="lname-text">Last Name</label>
-        <input type="text" class="form-control" id="lname-text" aria-describedby="lname-text" placeholder="Enter your Last Name">
-        <br>
-     </div>
-       <div class="form-group">
-        <label for="address-text"> Address</label>
-        <input type="text" class="form-control" id="address-text" aria-describedby="address-text" placeholder="Enter your address">
-        <br>
-     </div>
-       <div class="form-group">
-        <label for="storeName-text">Store Name</label>
-        <input type="text" class="form-control" id="storeName-text" aria-describedby="storeName-text" placeholder="Enter your Store Name">
-        <br>
-     </div>
-       <div class="form-group">
-        <label for="description-text">Description</label>
-        <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Enter your description">
-        <br>
-     </div>
-      <div class="form-group">
-        <label for="price-number">Price</label>
-        <input type="text" class="form-control" id="price-number" aria-describedby="price-number" placeholder="Enter your service price">
-        <br>
-     </div>
-    {{!-- <div class="form-group">
-        <label for="store-img">Upload your Image</label>
-        <input type="file" class="form-control-file" id="store-img">
-     </div> --}}
-     <br>
-        <button id="submit-register" class="btn btn-primary float-right">Submit</button>
+<div id="registration-form" class="w3-display-container w3-content" style="max-width:1500px;">
+  <div class="w3-display-middle w3-padding w3-col l6 m10">
+    <div class="w3-container" id="form-heading">
+      <h2>Register as a Masseuse</h2>
+      <p>Register as a Masseuse to get your QR code.</p>
     </div>
-    </form> 
+    <div class="w3-container w3-white w3-padding-16">
+      <div class="w3-row-padding">
+        <div class="w3-row-padding" style="margin:0 -16px;">
+        </div>
+        <form>
+        <div class="form-group">
+          <label for="fname-text">First Name</label>
+          <input type="text" class="form-control" id="fname-text" aria-describedby="fname-text" placeholder="Enter your First Name">
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="lname-text">Last Name</label>
+          <input type="text" class="form-control" id="lname-text" aria-describedby="lname-text" placeholder="Enter your Last Name">
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="address-text"> Address</label>
+          <input type="text" class="form-control" id="address-text" aria-describedby="address-text" placeholder="Enter your address">
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="storeName-text">Store Name</label>
+          <input type="text" class="form-control" id="storeName-text" aria-describedby="storeName-text" placeholder="Enter your Store Name">
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="description-text">Description</label>
+          <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Enter your description">
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="price-number">Price</label>
+          <input type="text" class="form-control" id="price-number" aria-describedby="price-number" placeholder="Enter your service price">
+          <br>
+        </div>
+        {{!--
+        <div class="form-group">
+          <label for="store-img">Upload your Image</label>
+          <input type="file" class="form-control-file" id="store-img">
+        </div> --}}
+        <br>
+        <button id="submit-register" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
   </div>
+  
+  </form>
 </div>
-
+</div>
+</div>
