@@ -3,10 +3,12 @@
 var fs = require("fs");
 var path = require("path");
 var Sequelize = require("sequelize");
+var QRcode = require('qrcode');
 var basename = path.basename(module.filename);
 var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
+
 
 if (config.use_env_variable) {
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
@@ -17,6 +19,30 @@ if (config.use_env_variable) {
     config.password,
     config
   );
+}
+
+function createQR(){
+  var siteToGenerate = "https://www.test.com"
+  QRcode.toDataURL(siteToGenerate, function(err, pic){
+    imgData = pic;
+    base64Data = imgData.replace(/^data:image\/png;base64,/,"");
+    writeQRtoFile();
+});
+}
+
+function writeQRtoFile() {
+  fs.writeFile("./images/test03.png", base64Data, "base64", function(err){
+    if(err) {
+    console.log("file error:" ,err);
+    } else {
+     //   console.log("on other side:",base64Data);
+        QRcodeDataBase.create({
+            name: "josh",
+            image: base64Data
+        });
+    console.log("wrote the file!");
+    }
+});
 }
 
 fs.readdirSync(__dirname)

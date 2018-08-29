@@ -21,6 +21,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    /*
     QRcode: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -28,6 +29,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    */
     scoreValues: {
       type: DataTypes.INTEGER,
       allowNull: false,

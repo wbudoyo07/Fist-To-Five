@@ -1,3 +1,5 @@
+
+
 module.exports = function(sequelize, DataTypes) {
   var storeInfo = sequelize.define("storeInfo", {
     routeName: {
@@ -52,6 +54,13 @@ module.exports = function(sequelize, DataTypes) {
     img: {
       type: DataTypes.BLOB,
       allowNull: true
+    },
+    QRcode: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+      validate: {
+        len: [1]
+      }
     }
   });
   return storeInfo;
