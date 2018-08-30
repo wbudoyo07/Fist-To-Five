@@ -1,1 +1,17 @@
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Raleway", Arial, Helvetica, sans-serif
+}
+
+body {
+    background-color: #262625;
+}
+
+#form-heading{
+    background-color: #c6a66a;
+}
+
+#button{
+    background-color: #c6a66a;
+    border-color: #c6a66a;
+}
 
