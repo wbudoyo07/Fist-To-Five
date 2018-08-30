@@ -1,8 +1,9 @@
 // alert("register js connected");
 console.log("connected");
 $("#submit-register").click(function() {
-  //alert("test");
-  var routeName = $("#storeName-text").val().trim();
+  var fname = $("#fname-text").val().trim();
+  var lname = $("#lname-text").val().trim();
+  var routeName = fname+lname;
   routeName = routeName.replace(/\s+/g, "").toLowerCase();
 
   var storeInfo = {
