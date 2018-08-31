@@ -5,10 +5,11 @@ header {
     background-color: #262625;
     background-image: url("../images/massage3.jpg");  
     background-repeat: no-repeat;
-    height: 100%;
     background-position: center;
     background-size: cover;
-    height: 450px;
+}
+#search-container{
+    padding: 5%;
 }
 #search-heading{
     background-color: #c6a66a;
