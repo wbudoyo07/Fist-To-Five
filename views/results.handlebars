@@ -1,22 +1,22 @@
-<!-- Page Content -->
-<div class="container">
-  <div class="row">
-
-    <div class="col-lg-10">
-
-      <div class="card mt-4">
-        <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+<div id="results-form" class="w3-display-container w3-content" style="max-width:7000px;">
+  <div class="w3-display-middle w3-padding w3-col l9 m10">
+    <div class="w3-container" id="form-heading">
+        <img class="card-img-top img-fluid" src="{{dataInfo.img}}" alt="">
         <div class="card-body">
+          <h1 class="card-title" id= "masseuse-name">{{dataInfo.fname}} {{dataInfo.lname}}</h1>
           <h3 class="card-title">{{dataInfo.storeName}}</h3>
           <h4>$ {{dataInfo.price}}</h4>
           <p class="card-text">{{dataInfo.description}}</p>
           <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
           4.0 stars
-        </div>
       </div>
-      <!-- /.card -->
-
-      <div class="card card-outline-secondary my-4">
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+      <div class="w3-row-padding">
+        <div class="w3-row-padding" style="margin:0 -16px;">
+        </div>
+        <form>
+        <div class="card card-outline-secondary my-4">
         <div class="card-header">
           Product Reviews
         </div>
@@ -39,15 +39,11 @@
           </p>
           <small class="text-muted">Posted by Anonymous on 3/1/17</small>
           <hr>
-          <a href="/" id="button" class="btn btn-primary">Leave a Review</a>
+          <a href="review" id="button" class="btn btn-primary">Leave a Review</a>
         </div>
       </div>
-      <!-- /.card -->
-
-    </div>
-    <!-- /.col-lg-9 -->
-
-  </div>
-
+  
+  </form>
 </div>
-<!-- /.container -->
+</div>
+</div>
