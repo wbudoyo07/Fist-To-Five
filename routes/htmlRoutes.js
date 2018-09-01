@@ -18,18 +18,19 @@ module.exports = function(app) {
   });
   // load owner information page
   app.get("/masseuseProfile", function(req, res) {
+    // res.json(req.user);
 
-    db.storeInfo
-      .findOne({ where: { routeName: req.params.routeName } })
-      .then(function(dbStoreInfo) {
+    // db.storeInfo
+    //   .findOne({ where: { routeName: req.params.routeName } })
+    //   .then(function(dbStoreInfo) {
 
-        res.render("masseuseProfile", {
-          titlePage: "My Profile",
-          javascript: "masseuseProfile.js",
-          css: "masseuseProfile.css",
-          dataInfo: dbStoreInfo
-        });
-      });
+    res.render("masseuseProfile", {
+      titlePage: "My Profile",
+      javascript: "masseuseProfile.js",
+      css: "masseuseProfile.css",
+      dataInfo: req.user
+    });
+    //   });
   });
   // load register page
   app.get("/register/", function(req, res) {

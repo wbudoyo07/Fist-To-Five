@@ -20,16 +20,6 @@ $(document).ready(function() {
       img: $("store-img").val()
     };
     console.log(storeInfo);
-    // $.ajax({
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   type: "POST",
-    //   url: "api/register",
-    //   data: JSON.stringify(storeInfo)
-    // }).then(function(data) {
-    //   window.location.replace("/");
-    // });
     $.post("/api/register", storeInfo).then(function(data) {
       console.log(data);
       window.location.replace(data);

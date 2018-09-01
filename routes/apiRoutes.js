@@ -8,6 +8,7 @@ module.exports = function(app) {
 
   var storeID;
   var base64Data;
+  // GET the information data from login user
   app.get("/api/login", function(req, res) {
     res.json(req.user);
   });
@@ -24,29 +25,8 @@ module.exports = function(app) {
       res.json(database);
     });
   });
-
-  // GET information for profile masseuse 
-  app.get("/api/masseuse", function(req,res) {
-    console.log(req.user);
-    if(!req.user) {
-      res.json({});
-    }
-    else {
-      // console.log(req.user);
-      res.json({
-        fname: req.user.fname,
-        lname: req.user.lname,
-        email: req.user.email,
-        address: req.user.address,
-        storeName: req.user.storeName,
-        description: req.user.description,
-        price: req.user.price,
-        img: req.user.img,
-        QRcode: req.user.QRcode
-      });
-    }
-  });
-
+  
+  // post the json  data masseuseProfile to /api/login route
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json("/masseuseProfile");
   });
