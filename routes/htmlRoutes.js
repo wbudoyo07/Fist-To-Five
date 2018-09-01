@@ -18,9 +18,11 @@ module.exports = function(app) {
   });
   // load owner information page
   app.get("/masseuseProfile", function(req, res) {
+
     db.storeInfo
       .findOne({ where: { routeName: req.params.routeName } })
       .then(function(dbStoreInfo) {
+
         res.render("masseuseProfile", {
           titlePage: "My Profile",
           javascript: "masseuseProfile.js",

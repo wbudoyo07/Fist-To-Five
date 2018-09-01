@@ -46,7 +46,7 @@ module.exports = function(app) {
       });
     }
   });
-  
+
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json("/masseuseProfile");
   });
@@ -55,8 +55,9 @@ module.exports = function(app) {
   app.post("/api/register", function(req, res) {
     // console.log("store the new id:",req.body);
     db.storeInfo.create(req.body).then(function(database) {
-      res.json(database);
+      // res.json(database);
       storeID = database.id;
+      res.redirect(307,"/api/login");
     //  console.log("store the new id:",database.id);
     }).then(function() {
     //  console.log("store the new id:",database.id);

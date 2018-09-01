@@ -1,6 +1,7 @@
 $(document).ready(function() {
   console.log("connected");
-  $("#submit-register").click(function() {
+  $("#submit-register").click(function(event) {
+    event.preventDefault();
     var fname = $("#fname-text").val().trim();
     var lname = $("#lname-text").val().trim();
     var routeName = fname+lname;
@@ -19,17 +20,19 @@ $(document).ready(function() {
       img: $("store-img").val()
     };
     console.log(storeInfo);
-    $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/register",
-      data: JSON.stringify(storeInfo)
-    }).then(function(data) {
+    // $.ajax({
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   type: "POST",
+    //   url: "api/register",
+    //   data: JSON.stringify(storeInfo)
+    // }).then(function(data) {
+    //   window.location.replace("/");
+    // });
+    $.post("/api/register", storeInfo).then(function(data) {
+      console.log(data);
       window.location.replace(data);
-    }).catch(function(err) {
-      console.log(err);
     });
   });
 });
