@@ -17,14 +17,14 @@ module.exports = function(app) {
     });
   });
   // load owner information page
-  app.get("/ownerInfo", function(req, res) {
+  app.get("/masseuseProfile", function(req, res) {
     db.storeInfo
       .findOne({ where: { routeName: req.params.routeName } })
       .then(function(dbStoreInfo) {
-        res.render("ownerInfo", {
-          titlePage: "Info",
-          javascript: "ownerInfo.js",
-          css: "ownerInfo.css",
+        res.render("masseuseProfile", {
+          titlePage: "My Profile",
+          javascript: "masseuseProfile.js",
+          css: "masseuseProfile.css",
           dataInfo: dbStoreInfo
         });
       });
