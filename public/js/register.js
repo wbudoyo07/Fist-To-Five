@@ -10,6 +10,8 @@ $("#submit-register").click(function() {
     routeName: routeName,
     fname: $("#fname-text").val().trim(),
     lname: $("#lname-text").val().trim(),
+    email: $("#email-text").val().trim(),
+    password: $("#password-masseuse").val().trim(),
     address: $("#address-text").val().trim(),
     storeName: $("#storeName-text").val().trim(),
     description: $("#description-text").val().trim(),
