@@ -2,8 +2,7 @@ var db = require("../models");
 var QRcode = require("qrcode");
 var multer = require("multer");
 var fs = require("fs");
-var path = require("path");
-
+var passport = require("../config/passport");
 
 
 module.exports = function(app) {
@@ -22,22 +21,31 @@ module.exports = function(app) {
     storage: storage
   }).single("profileImg");
   
+  // GET the information data from login user
+  app.get("/api/login", function(req, res) {
+    res.json(req.user);
+  });
   //GET  store infomation data from registration
   app.get("/api/register", function(req, res) {
     db.storeInfo.findAll({}).then(function(database) {
       res.json(database);
-     
     });
   });
+
   //GET  store infomation data from customer
   app.get("/api/customers", function(req, res) {
     db.customerReviews.findAll({}).then(function(database) {
       res.json(database);
     });
   });
+  
+  // post the json  data masseuseProfile to /api/login route
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json("/masseuseProfile");
+  });
+
   // Create a new owner's information
   app.post("/api/register", function(req, res) {
-   
     db.storeInfo.create(req.body).then(function(database) {
       res.json(database);
       var storeID = database.id;
@@ -50,8 +58,6 @@ module.exports = function(app) {
         }
       });
     }).then(function() {
-   
-      
       createQR("https://localhost:8080/review/"+convertIDtoString);
     
     });
