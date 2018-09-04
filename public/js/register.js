@@ -13,7 +13,7 @@ $("#submit-register").click(function() {
     storeName: $("#storeName-text").val().trim(),
     description: $("#description-text").val().trim(),
     price: $("#price-number").val().trim(),
-    img: $("store-img").val()
+  //  img: $("store-img").val()
   };
   console.log(storeInfo);
   $.ajax({

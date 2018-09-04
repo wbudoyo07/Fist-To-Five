@@ -1,13 +1,27 @@
 var db = require("../models");
 var QRcode = require("qrcode");
+var multer = require("multer");
 var fs = require("fs");
+var path = require("path");
 
 
 
 module.exports = function(app) {
-
-  var storeID;
+  
   var base64Data;
+  var convertIDtoString;
+
+  var storage = multer.diskStorage({
+    destination: "./public/images/profileImages",
+    filename: function(req, file, callback) {
+      callback(null,file.fieldname + convertIDtoString + path.extname(file.originalname));
+    }
+  });
+
+  var upload = multer({
+    storage: storage
+  }).single("profileImg");
+  
   //GET  store infomation data from registration
   app.get("/api/register", function(req, res) {
     db.storeInfo.findAll({}).then(function(database) {
@@ -23,17 +37,24 @@ module.exports = function(app) {
   });
   // Create a new owner's information
   app.post("/api/register", function(req, res) {
-   // console.log("store the new id:",req.body);
+   
     db.storeInfo.create(req.body).then(function(database) {
       res.json(database);
-      storeID = database.id;
-    //  console.log("store the new id:",database.id);
+      var storeID = database.id;
+      convertIDtoString = storeID.toString();
+      upload(req, res, function(err){
+        if(err) {
+          console.log(err);
+        } else {
+          console.log("this is the file",req.file);
+        }
+      });
     }).then(function() {
-    //  console.log("store the new id:",database.id);
-      createQR("https://www.google.com");
-     // console.log("would have excuted the createQR function");
-    });
    
+      
+      createQR("https://localhost:8080/review/"+convertIDtoString);
+    
+    });
   });
 
   // Create a new owner's information
@@ -47,20 +68,17 @@ module.exports = function(app) {
   function createQR(siteToGenerate) {
    
     QRcode.toDataURL(siteToGenerate, function(err, pic) {
-     var imgData = pic;
+      var imgData = pic;
       base64Data = imgData.replace(/^data:image\/png;base64,/,"");
      
-      
       db.storeInfo.update({
         
         QRcode: imgData
       }, {
         where: {
-          id: storeID
+          id: parseInt(convertIDtoString)
         }
-      }).then(function(database) {
-      //  res.json(database);
-     //   console.log("is imgData in?:",database);
+      }).then(function() {
         writeQRtoFile();
       });
       
@@ -68,10 +86,10 @@ module.exports = function(app) {
   }
   
   function writeQRtoFile() {
-    var convertIDtoString = storeID.toString();
-    console.log("ID?:", "./images/QRcodeID:"+convertIDtoString+".png");
+  
     
-    var saveLocation = "./images/QRcodeID"+convertIDtoString+".png";
+    
+    var saveLocation = "./public/images/qrCodeImages/QRcodeID"+convertIDtoString+".png";
 
     fs.writeFile(saveLocation, base64Data, "base64", function(err) {
       if(err) {
