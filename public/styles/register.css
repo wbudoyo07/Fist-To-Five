@@ -13,3 +13,9 @@ h1,h2,h3,h4,h5,h6 {
     background-color: #c6a66a;
     border-color: #c6a66a;
 }
+
+#submit-register:hover{
+    background-color: #b79046;
+    border-color: #b79046;
+}
+

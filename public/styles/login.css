@@ -1,3 +1,9 @@
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Raleway", Arial, Helvetica, sans-serif
+}
+body{
+    background-color: #262625;
+}
 .login-form {
     width: 340px;
     margin: 50px auto;
@@ -18,4 +24,13 @@
 .submit-btn {        
     font-size: 15px;
     font-weight: bold;
+    background-color: #c6a66a;
+    border-color: #c6a66a;
+}
+
+.submit-btn:hover {        
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #b79046;
+    border-color: #b79046;
 }
