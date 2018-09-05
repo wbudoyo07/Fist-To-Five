@@ -72,8 +72,7 @@ module.exports = function(app) {
           id: storeID
         }
       }).then(function(database) {
-       // res.json(database);
-        //   console.log("is imgData in?:",database);
+
         writeQRtoFile();
       });
       
