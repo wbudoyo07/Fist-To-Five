@@ -1,0 +1,34 @@
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Raleway", Arial, Helvetica, sans-serif
+}
+header {
+    background-color: #262625;
+    background-image: url("../images/massage3.jpg");  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#search-container{
+    padding: 5%;
+}
+#search-heading{
+    background-color: #c6a66a;
+}
+
+#button{
+    background-color: #c6a66a;
+    border-color: #c6a66a;
+}
+
+#search-button{
+    background-color: #262625;
+    color: white
+}
+
+footer{
+    background-color: #262625;
+    color: white
+}
+h1 {
+    color:Red;
+}

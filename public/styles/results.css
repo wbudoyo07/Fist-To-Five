@@ -1,0 +1,29 @@
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Raleway", Arial, Helvetica, sans-serif
+}
+body {
+    background-color: #262625;
+}
+#results-form {
+    background-color: #262625;
+    height: 900px;
+    margin-top: 220px;
+}
+#form-heading{
+    background-color: #c6a66a;
+}
+img{
+    margin-top: 25px
+}
+.card-body{
+    background-color: white;
+    margin-bottom: 15px;
+}
+#masseuse-name{
+    font-weight: bold;
+}
+#button{
+    background-color: #c6a66a;
+    border-color: #c6a66a;
+}
+
