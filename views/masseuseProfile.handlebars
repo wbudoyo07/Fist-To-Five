@@ -1,7 +1,15 @@
-<h1>{{dataInfo.fname}}</h1>
-<h1>{{dataInfo.lname}}</h1>
-<h1>{{dataInfo.email}}</h1>
-<h1>{{dataInfo.address}}</h1>
-<h1>{{dataInfo.storeName}}</h1>
-<h1>{{dataInfo.QRcode}}</h1>
-<h1>{{dataInfo.QRcode}}</h1>
+<div id="profile-form" class="w3-display-container w3-content" style="max-width:7000px;">
+  <div class="w3-display-middle w3-padding w3-col l9 m10">
+    <div class="w3-container" id="form-heading">
+      <h1>{{titlePage}}</h1>
+    </div>
+        <div class="card-body">
+          <h1 class="card-title" id= "masseuse-name">{{dataInfo.fname}} {{dataInfo.lname}}</h1>
+           <h3 class="card-title">{{dataInfo.email}}</h3>
+          <h3 class="card-title">{{dataInfo.storeName}}</h3>
+           <h3 class="card-title">{{dataInfo.address}}</h3>
+            <img class="card-img-top img-fluid" src="{{dataInfo.QRcode}}" alt="">
+          <p class="card-text">{{dataInfo.description}}</p>
+      </div>
+    </div>
+
