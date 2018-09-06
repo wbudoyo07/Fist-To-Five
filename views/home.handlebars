@@ -1,5 +1,5 @@
 <!-- Header -->
-<header class= "jumbotron">
+<header class="jumbotron">
     <div id="search-container">
         <div class="w3-container" id="search-heading">
             <h2><i class="fa fa-bed w3-margin-right"></i>Find a Masseuse</h2>
@@ -11,11 +11,11 @@
                 </div>
                 <label><i class="fa fa-male"></i> Masseuse Name</label>
                 <div id="searchBar" class="input-group mb-3">
-                    <input id="inputSearchBar" class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    <input id="inputSearchBar" class="form-control" type="text" placeholder="Search" aria-label="Search">                    {{!--
                     <div class="input-group-append">
                         <button id="button" type="button" class="btn btn-primary"><i class="fa fa-search w3-margin-right"></i>
                             Search</button>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -24,60 +24,74 @@
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:1532px;">
+    <div class="panel-body" id="storeSection"></div>
+    {{!-- <div class="w3-row-padding w3-padding-16">
+        <div class="w3-third w3-margin-bottom">
+            <img src="/w3images/room_single.jpg" alt="Norway" style="width:100%">
+            <div class="w3-container w3-white">
+                <h3>Name</h3>
+                <h6 class="w3-opacity">Price</h6>
+                <p>Store Name</p>
+                <p>Address</p>
+                <button id="search-button" class="w3-button w3-block w3-margin-bottom">Read Reviews</button>
+            </div>
+        </div>
+    </div> --}}
+</div> 
+</div>
 
-    <div class="w3-row-padding w3-padding-16">
-        <div class="w3-third w3-margin-bottom">
-            <img src="/w3images/room_single.jpg" alt="Norway" style="width:100%">
-            <div class="w3-container w3-white">
-                <h3>Name</h3>
-                <h6 class="w3-opacity">Price</h6>
-                <p>Store Name</p>
-                <p>Address</p>
-                <button id="search-button" class="w3-button w3-block w3-margin-bottom">Read Reviews</button>
-            </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-            <img src="/w3images/room_single.jpg" alt="Norway" style="width:100%">
-            <div class="w3-container w3-white">
-                <h3>Name</h3>
-                <h6 class="w3-opacity">Price</h6>
-                <p>Store Name</p>
-                <p>Address</p>
-                <button id="search-button" class="w3-button w3-block w3-margin-bottom">Read Reviews</button>
-            </div>
-        </div>
-        <div class="w3-third w3-margin-bottom">
-            <img src="/w3images/room_single.jpg" alt="Norway" style="width:100%">
-            <div class="w3-container w3-white">
-                <h3>Name</h3>
-                <h6 class="w3-opacity">Price</h6>
-                <p>Store Name</p>
-                <p>Address</p>
-                <button id="search-button" class="w3-button w3-block w3-margin-bottom">Read Reviews</button>
-            </div>
-        </div>
+<div class="w3-row-padding" id="about">
+    <div class="w3-col l12 m7">
+        <h3>About</h3>
+        <h6>Fist to Five is an app that links a Masseuse's profile to a user review page via a QR Code scanner. From a scanned
+            QR code, The landing page will be a review prompt for the item. Once review is submitted, user can read other
+            reviews. Users can independently go to the site without a QR code to read reviews, however, as a form of validation,
+            the only way to a review an item will be via taking a photo of the QR code. QR Codes as well as items will be
+            stored in mysql. App will be written using handlebars.</h6>
     </div>
+</div>
 
-    <div class="w3-row-padding" id="about">
-        <div class="w3-col l12 m7">
-            <h3>About</h3>
-            <h6>Fist to Five is an app that links a Masseuse's profile to a user review page via a QR Code scanner. 
-                From a scanned QR code, The landing page will be a review prompt for the item. Once review is submitted,
-                user can read other reviews. Users can independently go to the site without a QR code to read reviews, however, as a form
-                of validation, the only way to a review an item will be via taking a photo of the QR code. QR Codes as well
-                as items will be stored in mysql. App will be written using handlebars.</h6>
-        </div>
+<!-- Footer -->
+<footer class="w3-padding-32 w3-center w3-margin-top">
+    <h5>Find Us On</h5>
+    <div class="w3-xlarge w3-padding-16">
+        <a href="https://github.com/Jdelorim/Project2.git" target="_blank">
+            <i class="fa fa-github w3-hover-opacity"></i>
     </div>
+</footer>
 
-    <!-- Footer -->
-    <footer class="w3-padding-32 w3-center w3-margin-top">
-        <h5>Find Us On</h5>
-        <div class="w3-xlarge w3-padding-16">
-            <a href="https://github.com/Jdelorim/Project2.git" target="_blank">
-                <i class="fa fa-github w3-hover-opacity"></i>
-        </div>
-    </footer>
+</body>
 
-    </body>
+<script>
+    function runStoreQuery() {
+      var currentURL = window.location.origin;
 
-    </html>
+      // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+      $.ajax({ url: currentURL + "/api/register", method: "GET" })
+        .then(function(storeData) {
+
+          // Loop through and display each of the customers
+          for (var i = 0; i < 3; i++) {
+
+          // Create the HTML Well (Section) and Add the table content for each reserved table
+            var storeSection = $("<div>");
+            storeSection.addClass("well");
+            storeSection.attr("id", "storeWell-" + i + 1);
+            $("#storeSection").append(storeSection);
+            // Then display the remaining fields in the HTML (Section Name, Date, URL)
+            $("#storeWell-" + i + 1).append("<div class='w3-row-padding w3-padding-16'></div>");
+            $("#storeWell-" + i + 1).append("<div class='w3-third w3-margin-bottom'></div>");            
+            $("#storeWell-" + i + 1).append("<img src=" + storeData[i].img + "style='width:100%'>");                        
+            $("#storeWell-" + i + 1).append("<div class='w3-container w3-white'></div>");                        
+            $("#storeWell-" + i + 1).append("<h3><span class='label label-primary'> </span>" + storeData[i].fname + " " + storeData[i].lname +"</h3>");
+            $("#storeWell-" + i + 1).append("<h3><span class='w3-opacity label label-primary'> </span> $" + storeData[i].price + "</h3>");
+            $("#storeWell-" + i + 1).append("<h3><span class='label label-primary'> </span>" + storeData[i].storeName + "</h3>");
+            $("#storeWell-" + i + 1).append("<button id='search-button' class='w3-button w3-block w3-margin-bottom'><a href=" + "results/" + storeData[i].routeName + ">Read Reviews</a></button>");          
+          }
+        });
+    }
+    runStoreQuery();
+</script>
+
+</html>
+

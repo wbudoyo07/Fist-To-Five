@@ -1,23 +1,22 @@
-<div id="results-form" class="w3-display-container w3-content" style="max-width:7000px;">
-  <div class="w3-display-middle w3-padding w3-col l9 m10">
-    <div class="w3-container" id="form-heading">
-        <img class="card-img-top img-fluid" src="{{dataInfo.img}}" alt="">
-        <div class="card-body">
-          <h1 class="card-title" id= "masseuse-name">{{dataInfo.fname}} {{dataInfo.lname}}</h1>
-          <h3 class="card-title">{{dataInfo.storeName}}</h3>
-          <h4>$ {{dataInfo.price}}</h4>
-          <p class="card-text">{{dataInfo.description}}</p>
+<div class="results-form w3-container  w3-content">
+  <div id="results-container">
+    <div class="w3-container " id="form-heading">
+      {{!-- title part --}}
+      <div class="card-body pull-left profTitle">
+        <img class="card-img-top img-fluid pull-left profPic" src="{{dataInfo.img}}" alt="">
+        <h1 class="card-header" id= "masseuse-name">{{dataInfo.fname}} {{dataInfo.lname}}</h1>
+        <h3 class="card-title">{{dataInfo.storeName}}</h3>
+        <h4>$ {{dataInfo.price}}</h4>
+        <p class="card-text">{{dataInfo.description}}</p>
       </div>
     </div>
-    <div class="w3-container w3-white w3-padding-16" >
-      <div class="w3-row-padding" >
-        <div class="w3-row-padding" style="margin:0 -16px;">
-        </div>
-        <form>
-        <div class="card card-outline-secondary my-4" id="review-container" >
-        <div class="card-header">
-          Product Reviews
-        </div>
+
+    {{!-- details --}}
+    <div class="w3-container w3-padding-16 pull-right profDetail" id="review-container">
+        <div class="card card-outline-secondary" >
+          <h1 class="card-header">
+            Product Reviews
+          </h1>
         <div class="card-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus
             neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint
@@ -40,8 +39,7 @@
           <a href="review" id="button" class="btn btn-primary">Leave a Review</a>
         </div>
       </div>
-  
-  </form>
-</div>
+    </div>
+  </div>
 </div>
 </div>

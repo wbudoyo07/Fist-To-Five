@@ -9,7 +9,8 @@ header {
     background-size: cover;
 }
 #search-container{
-    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 #search-heading{
     background-color: #c6a66a;
