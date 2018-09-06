@@ -5,7 +5,7 @@ module.exports = function(app) {
     res.render("home", {
       titlePage: "Home",
       javascript: "home.js",
-      css: "home.css"
+      css: "home.css",
     });
   });
   
