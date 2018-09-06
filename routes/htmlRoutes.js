@@ -43,13 +43,12 @@ module.exports = function(app) {
     });
   });
   // load register page
-  app.get("/review/", function(req, res) {
-    db.storeInfo.findAll({}).then(function() {
-      res.render("review", {
-        titlePage: "Review",
-        javascript: "review.js",
-        css: "review.css"
-      });
+  app.get("/review/:id", function(req, res) {
+
+    res.render("review", {
+      titlePage: "Review",
+      javascript: "review.js",
+      css: "review.css"
     });
   });
   //load results page
@@ -65,6 +64,14 @@ module.exports = function(app) {
         });
       });
   });
+
+  //load results page
+  app.post("/review/:routeName", function(req, res) {
+    db.customerReviews.create( {fname:req.params.routeName});
+
+  });
+
+ 
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

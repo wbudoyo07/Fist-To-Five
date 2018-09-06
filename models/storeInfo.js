@@ -86,5 +86,13 @@ module.exports = function(sequelize, DataTypes) {
   storeInfo.hook("beforeCreate", function(user) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
+
+  storeInfo.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    storeInfo.hasMany(models.customerReviews, {
+      onDelete: "cascade"
+    });
+  };
   return storeInfo;
 };
