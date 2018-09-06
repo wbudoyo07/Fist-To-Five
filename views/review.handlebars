@@ -1,5 +1,4 @@
 
-
 <div id="review">
   <h1>{{title}}</h1>
   <div class="container">
@@ -16,218 +15,86 @@
         <br>
      </div>
      <div class="form-group">
-        <label for="description-text"> Massage Type</label>
-        <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Type of massage">
+        <label for="massage-type"> Massage Type<br></label>
+    
+        <div class="flex-container">
+                  
+                        <input type="radio" name="aroma" value="1">Aromatherapy</input>
+                        <input type="radio" name="reflex" value="2">Reflexology</input>
+                        <input type="radio" name="stone" value="3">Hot Stone</input>
+                        <input type="radio" name="swede" value="4">Swedish</input>    
+                        <input type="radio" name="tissue" value="5">Deep Tissue</input>
+                        <input type="radio" name="tissue" value="6">Thai</input>
+               
+        
+        
         <br>
      </div>
        <div class="form-group">
-        <label for="user-scores"> Rate massage</label>
-        <input type="text" class="form-control" id="user-scores" aria-describedby="user-scores" placeholder="Rate your massage">
-        <br>
+        <h4>How well did (your massage therapist) meet your expectations?
+    </h4>
+              <div class="flex-container">
+                  
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists0.png" class="fist"></input>
+                        <input type="radio" name="rating" value="1"><img src="../bootstrap/images/fists1.png" class="fist"></input>
+                        <input type="radio" name="rating" value="2"><img src="../bootstrap/images/fists2.png" class="fist"></input>
+                        <input type="radio" name="rating" value="3"><img src="../bootstrap/images/fists3.png" class="fist"></input>
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists4.png" class="fist"></input>
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists5.png" class="fist"></input>
+                 <br>
      </div>
+
+<div class="form-group">
+        <h4>How well did (your massage therapist) understand your needs?
+    </h4>
+              <div class="flex-container">
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists0.png" class="fist"></input>
+                        <input type="radio" name="rating" value="1"><img src="../bootstrap/images/fists1.png" class="fist"></input>
+                        <input type="radio" name="rating" value="2"><img src="../bootstrap/images/fists2.png" class="fist"></input>
+                        <input type="radio" name="rating" value="3"><img src="../bootstrap/images/fists3.png" class="fist"></input>
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists4.png" class="fist"></input>
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists5.png" class="fist"></input>
+                  <br>
+     </div>
+
+     <div class="form-group">
+        <h4>How well did (your massage therapist) meet your expectations?
+    </h4>
+              <div class="flex-container">
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists0.png" class="fist"></input>
+                        <input type="radio" name="rating" value="1"><img src="../bootstrap/images/fists1.png" class="fist"></input>
+                        <input type="radio" name="rating" value="2"><img src="../bootstrap/images/fists2.png" class="fist"></input>
+                        <input type="radio" name="rating" value="3"><img src="../bootstrap/images/fists3.png" class="fist"></input>
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists4.png" class="fist"></input>
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists5.png" class="fist"></input>
+                   <br>
+     </div>
+
+     <div class="form-group">
+        <h4>How likely are you to suggest (your message therapist)’s services to someone you know?
+    </h4>
+    <div>
+              <div class="flex-container">
+                  
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists0.png" class="fist"></input>
+                        <input type="radio" name="rating" value="1"><img src="../bootstrap/images/fists1.png" class="fist"></input>
+                        <input type="radio" name="rating" value="2"><img src="../bootstrap/images/fists2.png" class="fist"></input>
+                        <input type="radio" name="rating" value="3"><img src="../bootstrap/images/fists3.png" class="fist"></input>
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists4.png" class="fist"></input>
+                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists5.png" class="fist"></input>
+                   <br>
+     </div>
+
+
        <div class="form-group">
         <label for="review-text">Write review</label>
         <input type="text" class="form-control" id="review-text" aria-describedby="review-text" placeholder="Review your massage">
         <br>
      </div>
-       <div class="form-group">
-        <label for="description-text">Description</label>
-        <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Enter your description">
-        <br>
-     </div>
-    {{!-- <div class="form-group">
-        <label for="store-img">Upload your Image</label>
-        <input type="file" class="form-control-file" id="store-img">
-     </div> --}}
-     <br>
+  
 
-
-
-        <button id="submit" class="btn btn-primary float-right">Submit</button>
-
-    </div>
-
-
-   {{!-- <div class="container"> --}}
-
-    <h4>How well did (your massage therapist) meet your expectations?
-
-    </h4>
-              <div class="flex-container">
-                  <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists0.png" class="fist">
-                    </label>
-                    <label>
-                        <input type="radio" name="rating" value="1"><img src="../bootstrap/images/fists1.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="2"><img src="../bootstrap/images/fists2.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="3"><img src="../bootstrap/images/fists3.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists4.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists5.png" class="fist"></input>
-                    </label>  
-                    {{!-- </div> --}}
-
-                
-
-              <h4>How well did (your massage therapist) understand your needs?</h4>
-              {{!-- <div class="flex-container"> --}}
-                  <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists0.png" class="fist">
-                    </label>
-                    <label>
-                        <input type="radio" name="rating" value="1"><img src="../bootstrap/images/fists1.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="2"><img src="../bootstrap/images/fists2.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="3"><img src="../bootstrap/images/fists3.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists4.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists5.png" class="fist"></input>
-                    </label>  
-                    {{!-- </div> --}}
-
-                  <h4>How likely are you to regularly receive massages from (your massage therapist) in the future?</h4>
-            
-              {{!-- <div class="flex-container"> --}}
-                  <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists0.png" class="fist">
-                    </label>
-                    <label>
-                        <input type="radio" name="rating" value="1"><img src="../bootstrap/images/fists1.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="2"><img src="../bootstrap/images/fists2.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="3"><img src="../bootstrap/images/fists3.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists4.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists5.png" class="fist"></input>
-                    </label>  
-                    {{!-- </div> --}}
-
-                      <h4>How likely are you to suggest (your message therapist)’s services to someone you know?</h4>
-                              {{!-- <div class="flex-container"></div> --}}
-                  <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists0.png" class="fist">
-                    </label>
-                    <label>
-                        <input type="radio" name="rating" value="1"><img src="../bootstrap/images/fists1.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="2"><img src="../bootstrap/images/fists2.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="3"><img src="../bootstrap/images/fists3.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists4.png" class="fist"></input>
-                    </label> 
-                    <label>
-                        <input type="radio" name="rating" value="0"><img src="../bootstrap/images/fists5.png" class="fist"></input>
-                    </label>  
-                    </div>
-
-                            <button id="submit" class="btn btn-danger">Submit</button>
+                            <button id="submit-review" class="btn btn-danger">Submit</button>
           </form> 
   </div>
 </div>          
-                
-                
-                
-                      {{!-- <div>
-                          <div class="flex-container">
-                         <span class="hand">
-                           <input type="image" src="images/fists0.png" data-attr="0" id="rating-0">
-                         </span>
-                         <span class="hand">
-                            <input type="image" src="images/fists1.png" data-attr="1" id="rating-1">
-                        </span>
-                         <span class="hand">
-                       <input type="image" src="images/fists2.png" data-attr="2" id="rating-2">
-                         </span>
-                       <span class="hand">
-                        <input type="image" src="images/fists3.png" data-attr="3" id="rating-3">
-                         </span>
-                         <span class="hand">
-                           <input type="image" src="images/fists4.png" data-attr="4" id="rating-4">
-                           </span>
-   <span class="hand">
-       <input type="image" src="images/fists5.png" data-attr="5" id="rating-5">
-   </span>
-   </div>
-                          </div> --}}
-=======
-<div id="review" class="w3-display-container w3-content" style="max-width:1500px;">
-  <div class="w3-display-middle w3-padding w3-col l6 m10">
-    <div class="w3-container" id="form-heading">
-      <h1>{{titlePage}}</h1>
-    </div>
-    <div class="w3-container w3-white w3-padding-16">
-      <div class="w3-row-padding">
-        <div class="w3-row-padding" style="margin:0 -16px;">
-        </div>
-        <form>
-          <div class="form-group" >
-            <label for="fname-text">First Name</label>
-            <input type="text" class="form-control" id="fname-text" aria-describedby="fname-text" placeholder="Enter your First Name">
-            <br>
-          </div>
-          <div class="form-group">
-            <label for="lname-text">Last Name</label>
-            <input type="text" class="form-control" id="lname-text" aria-describedby="lname-text" placeholder="Enter your Last Name">
-            <br>
-          </div>
-          <div class="form-group">
-            <label for="description-text"> Massage Type</label>
-            <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Type of massage">
-            <br>
-          </div>
-          <div class="form-group">
-            <label for="user-scores"> Rate massage</label>
-            <input type="text" class="form-control" id="user-scores" aria-describedby="user-scores" placeholder="Rate your massage">
-            <br>
-          </div>
-          <div class="form-group">
-            <label for="review-text">Write review</label>
-            {{!-- <input type="text" class="form-control" id="review-text" aria-describedby="review-text" placeholder="Review your massage"> --}}
-            <textarea class="form-control" id="review-text" rows="3" placeholder="Review your massage"></textarea>            
-            <br>
-          </div>
-          <div class="form-group">
-            <label for="description-text">Description</label>
-            {{!-- <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Enter your description"> --}}
-            <textarea class="form-control" id="description-text" rows="3" placeholder="Enter your description"></textarea>
-            <br>
-          </div>
-          {{!--
-          <div class="form-group">
-            <label for="store-img">Upload your Image</label>
-            <input type="file" class="form-control-file" id="store-img">
-          </div> --}}
-          <br>
-          <button type="submit" class="submit-btn btn btn-primary btn-block">Submit</button>
-      </div>
-    </div>
-  </div>
-
-  </form>
-</div>
-</div>
-</div>
-
+    
