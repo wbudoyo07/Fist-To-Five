@@ -1,14 +1,14 @@
 var db = require("../models");
-var QRcode = require("qrcode");
-var fs = require("fs");
+// var QRcode = require("qrcode");
+// var fs = require("fs");
 var passport = require("../config/passport");
 
 
 module.exports = function (app) {
 
-  var storeID;
+  // var storeID;
   var storeRoute;
-  var base64Data;
+  // var base64Data;
   // GET the information data from login user
   app.get("/api/login", function (req, res) {
     res.json(req.user);
@@ -45,7 +45,7 @@ module.exports = function (app) {
     }).then(function() {
     //  console.log("store the new id:",database.id);
       createQR("https://localhost:8080/review/"+storeRoute);
->
+
       // console.log("would have excuted the createQR function");
     });
 
