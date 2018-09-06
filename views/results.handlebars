@@ -1,23 +1,20 @@
-<div class="results-form w3-container  w3-content">
-  <div id="results-container">
-    <div class="w3-container " id="form-heading">
+  <div class="w3-container" id="results-container">
       {{!-- title part --}}
-      <div class="card-body pull-left profTitle">
-        <img class="card-img-top img-fluid pull-left profPic" src="{{dataInfo.img}}" alt="">
-        <h1 class="card-header" id= "masseuse-name">{{dataInfo.fname}} {{dataInfo.lname}}</h1>
-        <h3 class="card-title">{{dataInfo.storeName}}</h3>
+      <div class="w3-container" id="profTitle">
+        <img class="pull-left profPic" src="{{dataInfo.img}}" alt="">
+        <div class="card-body" id= "masseuse-name">
+        <h1 class="card-header">{{dataInfo.fname}} {{dataInfo.lname}}</h1>
+        <h3>{{dataInfo.storeName}}</h3>
         <h4>$ {{dataInfo.price}}</h4>
-        <p class="card-text">{{dataInfo.description}}</p>
+        <p>{{dataInfo.description}}</p>
+        </div>
       </div>
-    </div>
-
+     
     {{!-- details --}}
-    <div class="w3-container w3-padding-16 pull-right profDetail" id="review-container">
-        <div class="card card-outline-secondary" >
-          <h1 class="card-header">
-            Product Reviews
-          </h1>
+    <div class="w3-container w3-padding-16 pull-right">
         <div class="card-body">
+          <h1 class="card-header">Product Reviews</h1>
+          <div id="review-container"
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus
             neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint
             natus.
@@ -36,10 +33,9 @@
           </p>
           <small class="text-muted">Posted by Anonymous on 3/1/17</small>
           <hr>
-          <a href="review" id="button" class="btn btn-primary">Leave a Review</a>
+          {{!-- <a href="review" id="button" class="btn btn-secondary btn-lg btn-block">Leave a Review</a> --}}
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
+   </div>

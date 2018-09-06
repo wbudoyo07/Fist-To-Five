@@ -4,53 +4,46 @@ h1,h2,h3,h4,h5,h6 {
 body {
     background-color: #262625;
 }
-#results-form {
-    background-color: #262625;
-}
 #results-container{
     background-color: #c6a66a;
-    float: left;
     width: 90%; 
     padding: 5px;
-    margin-top: 20px; 
-    margin-bottom: 20px; 
+    margin-top: 30px;
+    margin-left: auto;  
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+#profTitle {
+    width: 97%;
+    margin-top: 20px;
+    background-color: white;
+    margin-left: 15px;
+    margin-right: 50px;
+    padding: 50px;
+    
 }
 .profPic {
     width: 35%;
     padding: 10px;
     margin-top: 0px;
 }
-.card-header{
-    background-color: white;
-}
-.profTitle {
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px; 
-}
-
-#form-heading{
-    background-color: #c6a66a;
-}
-#review-container{
+/* #review-container{
     float: right;
     background-color: #c6a66a;
-}
-img{
-    margin-top: 25px;
-    height: 400px;
-}
+} */
 .card-body{
     background-color: white;
-    margin-bottom: 15px;
-    border-radius: 5px;
 }
 #masseuse-name{
     font-weight: bold;
     border-bottom: none;
 }
+#review-container{
+    margin-top: 10px
+}
 #button{
     background-color: #c6a66a;
     border-color: #c6a66a;
 }
+
 

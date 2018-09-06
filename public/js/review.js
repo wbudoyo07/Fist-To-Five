@@ -4,16 +4,16 @@
 //send to database
 // translate values of massage type through if statements to return text
 
-alert("review js connected");
-$(document).ready(function() {
+// alert("review js connected");
+$(document).ready(function () {
   console.log("connected");
-  $("submit-review").click(function(event) {
+  $("submit-review").click(function (event) {
     event.preventDefault();
     var fname = $("#fname-text").val().trim();
     var lname = $("#lname-text").val().trim();
-    var routeName = fname+lname;
+    var routeName = fname + lname;
     routeName = routeName.replace(/\s+/g, "").toLowerCase();
-    
+
     var customerReviews = {
       routeName: routeName,
       fName: $("#fName-text").val().trim(),
@@ -23,16 +23,16 @@ $(document).ready(function() {
       textReview: $("#review-text").val(),
       // QRcode: $("#qrCode-text").val().trim(),
     };
-      console.log(customerReviews);
-      $.post("/api/customers", customerReviews).then(function(data) {
-        console.log(data);
-        window.location.replace(data);
-      });
+    console.log(customerReviews);
+    $.post("/api/customers", customerReviews).then(function (data) {
+      console.log(data);
+      window.location.replace(data);
     });
   });
-  
-  
-  
+});
+
+
+
 
 
 

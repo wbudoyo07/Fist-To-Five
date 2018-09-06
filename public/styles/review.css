@@ -8,6 +8,11 @@ body {
     background-color: #262625;
     height: 900px;
 }
+#review-container{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
 #form-heading{
     background-color: #c6a66a;
 }
@@ -21,4 +26,25 @@ body {
     background-color: #b79046;
     border-color: #b79046;
 }
+#registration-form {
+    background-color: #262625;
+    height: 900px;
+}
+#form-heading{
+    background-color: #c6a66a;
+}
+
+#submit-review{
+    background-color: #c6a66a;
+    border-color: #c6a66a;
+}
+
+#submit-review:hover{
+    background-color: #b79046;
+    border-color: #b79046;
+}
+.fist{
+    height: 30px;
+}
+
 
