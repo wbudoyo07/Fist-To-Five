@@ -1,4 +1,5 @@
 
+
 <div id="review">
   <h1>{{title}}</h1>
   <div class="container">
@@ -171,3 +172,62 @@
    </span>
    </div>
                           </div> --}}
+=======
+<div id="review" class="w3-display-container w3-content" style="max-width:1500px;">
+  <div class="w3-display-middle w3-padding w3-col l6 m10">
+    <div class="w3-container" id="form-heading">
+      <h1>{{titlePage}}</h1>
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+      <div class="w3-row-padding">
+        <div class="w3-row-padding" style="margin:0 -16px;">
+        </div>
+        <form>
+          <div class="form-group" >
+            <label for="fname-text">First Name</label>
+            <input type="text" class="form-control" id="fname-text" aria-describedby="fname-text" placeholder="Enter your First Name">
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="lname-text">Last Name</label>
+            <input type="text" class="form-control" id="lname-text" aria-describedby="lname-text" placeholder="Enter your Last Name">
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="description-text"> Massage Type</label>
+            <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Type of massage">
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="user-scores"> Rate massage</label>
+            <input type="text" class="form-control" id="user-scores" aria-describedby="user-scores" placeholder="Rate your massage">
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="review-text">Write review</label>
+            {{!-- <input type="text" class="form-control" id="review-text" aria-describedby="review-text" placeholder="Review your massage"> --}}
+            <textarea class="form-control" id="review-text" rows="3" placeholder="Review your massage"></textarea>            
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="description-text">Description</label>
+            {{!-- <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Enter your description"> --}}
+            <textarea class="form-control" id="description-text" rows="3" placeholder="Enter your description"></textarea>
+            <br>
+          </div>
+          {{!--
+          <div class="form-group">
+            <label for="store-img">Upload your Image</label>
+            <input type="file" class="form-control-file" id="store-img">
+          </div> --}}
+          <br>
+          <button type="submit" class="submit-btn btn btn-primary btn-block">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  </form>
+</div>
+</div>
+</div>
+

@@ -7,6 +7,7 @@ var passport = require("../config/passport");
 module.exports = function(app) {
 
   var storeID;
+  var storeRoute;
   var base64Data;
   // GET the information data from login user
   app.get("/api/login", function(req, res) {
@@ -36,12 +37,13 @@ module.exports = function(app) {
     // console.log("store the new id:",req.body);
     db.storeInfo.create(req.body).then(function(database) {
       // res.json(database);
+      storeRoute = database.routeName;
       storeID = database.id;
       res.redirect(307,"/api/login");
     //  console.log("store the new id:",database.id);
     }).then(function() {
     //  console.log("store the new id:",database.id);
-      createQR("https://www.google.com");
+      createQR("https://localhost:8080/review/"+storeRoute);
       // console.log("would have excuted the createQR function");
     });
    
@@ -70,8 +72,7 @@ module.exports = function(app) {
           id: storeID
         }
       }).then(function(database) {
-      //  res.json(database);
-        //   console.log("is imgData in?:",database);
+
         writeQRtoFile();
       });
       
@@ -79,10 +80,10 @@ module.exports = function(app) {
   }
   
   function writeQRtoFile() {
-    var convertIDtoString = storeID.toString();
-    console.log("ID?:", "./images/QRcodeID:"+convertIDtoString+".png");
+   // var convertIDtoString = storeID.toString();
+   // console.log("ID?:", "./images/qrCodeImages/QRcodeID:"+convertIDtoString+".png");
     
-    var saveLocation = "./images/QRcodeID"+convertIDtoString+".png";
+    var saveLocation = "./public/images/qrCodeImages/QRcodeID"+storeRoute+".png";
 
     fs.writeFile(saveLocation, base64Data, "base64", function(err) {
       if(err) {
