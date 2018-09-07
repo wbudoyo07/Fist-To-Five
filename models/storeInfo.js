@@ -6,67 +6,76 @@ module.exports = function(sequelize, DataTypes) {
   var storeInfo = sequelize.define("storeInfo", {
     routeName: {
       type: DataTypes.STRING,
+    /*
       allowNull: false,
       validate: {
         len: [1]
       }
-    },
+    */},
     fname: {
       type: DataTypes.STRING,
+      /*
       allowNull: false,
       validate: {
         len: [1]
-      }
+      }*/
     },
     lname: {
       type: DataTypes.STRING,
+      /*
       allowNull: false,
       validate: {
         len: [1]
-      }
+      }*/
     },
     email: {
       type: DataTypes.STRING,
+      /*
       allowNull:false,
       unique: true,
       validate: {
         isEmail: true
-      }
+      }*/
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false
+      
+      //allowNull: false
     },
     address: {
       type: DataTypes.STRING,
+      /*
       allowNull: false,
       validate: {
         len: [1]
-      }
+      }*/
     },
     storeName: {
       type: DataTypes.STRING,
+      /*
       allowNull: false,
       validate: {
         len: [1]
-      }
+      }*/
     },
     description: {
       type: DataTypes.STRING,
+      /*
       allowNull: false,
       validate: {
         len: [1]
-      }
+      }*/
     },
     price: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      /*
       allowNull: false,
       validate: {
         len: [1]
-      }
+      }*/
     },
     img: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: true
     },
     QRcode: {
