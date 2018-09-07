@@ -11,6 +11,7 @@ module.exports = function (app) {
   var storeID;
   var storeRoute;
   var base64Data;
+
   var imgPath; 
 
 
@@ -26,6 +27,8 @@ module.exports = function (app) {
   var upload = multer({
     storage: storage
   }).single("storeImg");
+
+
   // GET the information data from login user
   app.get("/api/login", function (req, res) {
     res.json(req.user);
@@ -89,6 +92,7 @@ module.exports = function (app) {
         where: {
           id: storeID
         }
+
       }).then(function() {
         db.storeInfo.update({
           routeName: storeRoute
@@ -109,6 +113,10 @@ module.exports = function (app) {
             writeQRtoFile();
           })
         })
+      }).then(function() {
+
+        writeQRtoFile();
+
       });
     });
   }
