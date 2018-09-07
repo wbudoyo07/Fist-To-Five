@@ -47,17 +47,19 @@ module.exports = function (app) {
 
   // Create a new owner's information
   app.post("/api/register",upload, function (req, res) {
-    res.send("connected");
+   // res.send("connected");
     //these work
     console.log("fname:",req.body.fname);
     console.log("price:",req.body.priceNumber);
+  //  console.log("lname", req.boy.lname);
     //need to pass to sequalize
     storeRoute = req.body.routeName;
     
     db.storeInfo.create(req.body).then(function (database) {
-      // res.json(database);
-      
-      console.log("routeName:",storeRoute);
+   //    res.json(database);
+   //   console.log("fname2:", req.body.fname);
+   //   console.log("database:", database);
+    //  console.log("routeName:",storeRoute);
       res.redirect(307,"/api/login");
     //  console.log("store the new id:",database.id);
     }).then(function() {

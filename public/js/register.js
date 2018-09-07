@@ -8,6 +8,7 @@ $(document).ready(function() {
     var fname = $("#fname-text").val().trim();
     var lname = $("#lname-text").val().trim();
     var routeName = fname+lname;
+    console.log("routeName:",routeName);
     routeName = routeName.replace(/\s+/g, "").toLowerCase();
     var email = $("#email-text").val().trim();
     var password = $("#password-masseuse").val().trim();
@@ -18,18 +19,18 @@ $(document).ready(function() {
 
     formData.append("fname",fname);
     formData.append("lname",lname);
-    formData.append("routeName",routeName);
+   // formData.append("routeName",routeName);
     formData.append("email",email);
     formData.append("password",password);
     formData.append("address",address);
     formData.append("storeName",storeName);
     formData.append("description",description);
     formData.append("priceNumber",price);
-
+    console.log("formData",formData);
     $.ajax({
       url: "/api/register",
       type: "POST",
-      data: formData,
+      data: formData + routeName,
       processData: false,
       contentType: false,
       sucess: function(r) {
