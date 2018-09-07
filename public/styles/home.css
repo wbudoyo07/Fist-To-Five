@@ -1,6 +1,4 @@
-h1,h2,h3,h4,h5,h6 {
-    font-family: "Raleway", Arial, Helvetica, sans-serif
-}
+
 header {
     background-color: #262625;
     background-image: url("../images/massage3.jpg");  
@@ -8,28 +6,24 @@ header {
     background-position: center;
     background-size: cover;
 }
+
 #search-container{
+    padding-top: 100px;
     padding-left: 10%;
+    padding-bottom: 100px;
     padding-right: 10%;
 }
-#search-heading{
-    background-color: #c6a66a;
+
+#card-container{
+    padding-top: 50px;
+    background-color: white;
 }
 
-#button{
-    background-color: #c6a66a;
-    border-color: #c6a66a;
-}
-
-#search-button{
-    background-color: #262625;
-    color: white
+#card-image{
+    height: 200px;
+    width: 200px;
 }
 .card{
     background-color: lightgray;
 }
 
-footer{
-    background-color: #262625;
-    color: white
-}
