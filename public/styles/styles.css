@@ -1,5 +1,35 @@
 .list-group-item {
   line-height: 2.5;
 }
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Raleway", Arial, Helvetica, sans-serif
+}
+body{
+  background-color: #262625;
+}
+#form-heading{
+  background-color: #c6a66a;
+}
+#black-button{
+  background-color: #262625;
+  color: white
+}
+#gold-btn {        
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #c6a66a;
+  border-color: #c6a66a;
+}
 
+#gold-btn:hover {        
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #b79046;
+  border-color: #b79046;
+}
+
+footer{
+  background-color: #262625;
+  color: white
+}
 

@@ -1,21 +1,14 @@
-h1,h2,h3,h4,h5,h6 {
-    font-family: "Raleway", Arial, Helvetica, sans-serif
-}
-body {
-    background-color: #262625;
-}
+
 #review {
     background-color: #262625;
-    height: 900px;
+    height: 930px;
 }
 #review-container{
     margin-top: 100px;
     margin-bottom: 20px;
 }
 
-#form-heading{
-    background-color: #c6a66a;
-}
+
 
 .submit-btn{
     background-color: #c6a66a;

@@ -12,13 +12,4 @@ body{
     background-color: #c6a66a;
 }
 
-#submit-register{
-    background-color: #c6a66a;
-    border-color: #c6a66a;
-}
-
-#submit-register:hover{
-    background-color: #b79046;
-    border-color: #b79046;
-}
 

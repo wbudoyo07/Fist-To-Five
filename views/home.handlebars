@@ -1,7 +1,7 @@
 <!-- Header -->
-<header class="jumbotron">
+<header>
     <div id="search-container">
-        <div class="w3-container" id="search-heading">
+        <div class="w3-container" id="form-heading">
             <h2><i class="fa fa-bed w3-margin-right"></i>Find a Masseuse</h2>
             <p>Find the best Masseuse based on their reviews.</p>
         </div>
@@ -23,33 +23,81 @@
 </header>
 
 <!-- Page content -->
-<div id="storeSection"></div>
+<div id="card-container">
+    <div id="store-cards">
+        <div class='col-sm-4 pull-left'>
+            <div class='card'>
+                <img id="card-image" src={{dataInfo.0.img}} style='width:100%'>
+                <div class='card-body'>
+                    <h3>{{dataInfo.0.fname}} {{dataInfo.0.lname}}</h3>
+                    <h3 class='w3-opacity'>$ {{dataInfo.0.price}}</h3>
+                    <h3>{{dataInfo.0.storeName}}</h3>
+                    <h4>{{dataInfo.0.address}}</h4>
+                    <a id='black-button' class='btn btn-secondary btn-md btn-block' href="results/{{dataInfo.0.routeName}}">Read
+                        Reviews</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div id="store-cards">
+    <div class='col-sm-4 pull-left'>
+        <div class='card'>
+            <img id="card-image" src={{dataInfo.1.img}} style='width:100%'>
+            <div class='card-body'>
+                <h3>{{dataInfo.1.fname}} {{dataInfo.1.lname}}</h3>
+                <h3 class='w3-opacity'>$ {{dataInfo.1.price}}</h3>
+                <h3>{{dataInfo.1.storeName}}</h3>
+                <h4>{{dataInfo.1.address}}</h4>
+                <a id='black-button' class='btn btn-secondary btn-md btn-block' href="results/{{dataInfo.1.routeName}}">Read
+                    Reviews</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="store-cards">
+    <div class='col-sm-4 pull-left'>
+        <div class='card'>
+            <img id="card-image" src={{dataInfo.2.img}} style='width:100%'>
+            <div class='card-body'>
+                <h3>{{dataInfo.2.fname}} {{dataInfo.2.lname}}</h3>
+                <h3 class='w3-opacity'>$ {{dataInfo.2.price}}</h3>
+                <h3>{{dataInfo.2.storeName}}</h3>
+                <h4>{{dataInfo.2.address}}</h4>
+                <a id='black-button' class='btn btn-secondary btn-md btn-block' href="results/{{dataInfo.2.routeName}}">Read
+                    Reviews</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="w3-row-padding" id="about">
 
-<div class="jumbtron">
-  <div class="card-body">
-    <h2 class="card-title">About</h2>
-    <p class="card-text">Fist to Five is an app that links a Masseuse's profile to a user review page via a QR Code scanner. From a scanned
-            QR code, The landing page will be a review prompt for the item. Once review is submitted, user can read other
-            reviews. Users can independently go to the site without a QR code to read reviews, however, as a form of validation,
-            the only way to a review an item will be via taking a photo of the QR code. QR Codes as well as items will be
-            stored in mysql. App will be written using handlebars.</p>
-  </div>
+    <div class="jumbtron">
+        <div class="card-body">
+            <h2 class="card-title">About</h2>
+            <p class="card-text">Fist to Five is an app that links a Masseuse's profile to a user review page via a QR Code
+                scanner. From a scanned QR code, The landing page will be a review prompt for the item. Once review is submitted,
+                user can read other reviews. Users can independently go to the site without a QR code to read reviews, however,
+                as a form of validation, the only way to a review an item will be via taking a photo of the QR code. QR Codes
+                as well as items will be stored in mysql. App will be written using handlebars.</p>
+        </div>
 
-</div>
-
-<!-- Footer -->
-<footer class="w3-padding-32 w3-center w3-margin-top">
-    <h5>Find Us On</h5>
-    <div class="w3-xlarge w3-padding-16">
-        <a href="https://github.com/Jdelorim/Project2.git" target="_blank">
-            <i class="fa fa-github w3-hover-opacity"></i>
     </div>
-</footer>
+    </div>
 
-</body>
+    <!-- Footer -->
+    <footer class="w3-padding-32 w3-center w3-margin-top">
+        <h5>Find Us On</h5>
+        <div class="w3-xlarge w3-padding-16">
+            <a href="https://github.com/Jdelorim/Project2.git" target="_blank">
+                <i class="fa fa-github w3-hover-opacity"></i>
+        </div>
+    </footer>
+
+    </body>
 
 
-</html>
-
+    </html>
