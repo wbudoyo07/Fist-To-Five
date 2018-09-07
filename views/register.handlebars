@@ -7,54 +7,58 @@
       <div class="w3-row-padding">
         <div class="w3-row-padding" style="margin:0 -16px;">
         </div>
-        <form>
+        <form action="/api/register" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="fname-text">First Name</label>
-          <input type="text" class="form-control" id="fname-text" aria-describedby="fname-text" placeholder="Enter your First Name">
+          <input name="fname" type="text" class="form-control" id="fname-text" aria-describedby="fname-text" placeholder="Enter your First Name">
           <br>
         </div>
         <div class="form-group">
           <label for="lname-text">Last Name</label>
-          <input type="text" class="form-control" id="lname-text" aria-describedby="lname-text" placeholder="Enter your Last Name">
+          <input name="lname" type="text" class="form-control" id="lname-text" aria-describedby="lname-text" placeholder="Enter your Last Name">
           <br>
         </div>
         <div class="form-group">
           <label for="email-text">Email</label>
-          <input type="email" class="form-control" id="email-text" aria-describedby="email-text" placeholder="Enter your Email Address: Example@gmail.com">
+          <input name="email" type="email" class="form-control" id="email-text" aria-describedby="email-text" placeholder="Enter your Email Address: Example@gmail.com">
           <br>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="password-masseuse" aria-describedby="password-masseuse" placeholder="Enter your Password">
+          <input name="password" type="password" class="form-control" id="password-masseuse" aria-describedby="password-masseuse" placeholder="Enter your Password">
           <br>
         </div>
         <div class="form-group">
           <label for="address-text"> Address</label>
-          <input type="text" class="form-control" id="address-text" aria-describedby="address-text" placeholder="Enter your address">
+          <input name="address" type="text" class="form-control" id="address-text" aria-describedby="address-text" placeholder="Enter your address">
           <br>
         </div>
         <div class="form-group">
           <label for="storeName-text">Store Name</label>
-          <input type="text" class="form-control" id="storeName-text" aria-describedby="storeName-text" placeholder="Enter your Store Name">
+          <input name="storeName" type="text" class="form-control" id="storeName-text" aria-describedby="storeName-text" placeholder="Enter your Store Name">
           <br>
         </div>
         <div class="form-group">
           <label for="description-text">Description</label>
-          <input type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Enter your description">
+          <input name="description" type="text" class="form-control" id="description-text" aria-describedby="description-text" placeholder="Enter your description">
           <br>
         </div>
         <div class="form-group">
           <label for="price-number">Price</label>
-          <input type="text" class="form-control" id="price-number" aria-describedby="price-number" placeholder="Enter your service price">
+          <input name="price" type="text" class="form-control" id="price-number" aria-describedby="price-number" placeholder="Enter your service price">
           <br>
         </div>
         
         <div class="form-group">
           <label for="store-img">Upload your Image</label>
-          <input type="file" class="form-control-file" id="store-img">
+          <input name="storeImg" type="file" class="form-control-file" id="store-img">
         </div>
+           
+         
+        
+       
         <br>
-        <button id="submit-register" class="btn btn-secondary btn-lg btn-block">Submit</button>
+        <button name="sendForm" type="submit" value="Submit" id="submit-register" class="btn btn-secondary btn-lg btn-block">Submit</button>
       </div>
     </div>
   </div>
