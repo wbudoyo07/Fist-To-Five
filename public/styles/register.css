@@ -11,5 +11,17 @@ body{
 #form-heading{
     background-color: #c6a66a;
 }
-
+#submit-register {        
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #c6a66a;
+    border-color: #c6a66a;
+  }
+  
+  #submit-register:hover {        
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #b79046;
+    border-color: #b79046;
+  }
 
