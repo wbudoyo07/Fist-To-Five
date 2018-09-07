@@ -35,7 +35,9 @@ module.exports = function (app) {
   });
   //GET  store infomation data from registration
   app.get("/api/register", function (req, res) {
-    db.storeInfo.findAll({}).then(function (database) {
+    db.storeInfo.findAll({ 
+      include: [db.customerReviews]
+    }).then(function (database) {
       res.json(database);
     });
   });
@@ -68,7 +70,7 @@ module.exports = function (app) {
       res.redirect("/login");
     }).then(function() {
     
-      createQR("https://localhost:8080/review/"+storeID);
+      createQR("https://fist-to-five.herokuapp.com/review/"+storeID);
     });
   });
 

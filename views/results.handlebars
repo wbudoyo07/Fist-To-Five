@@ -14,7 +14,12 @@
     <div class="w3-container w3-padding-16 pull-right">
         <div class="card-body">
           <h1 class="card-header">Product Reviews</h1>
-          <div id="review-container"
+          <div id="review-container">
+            {{#each dataInfo.customerReviews}}
+            <p>{{this.textReview}}</p>
+            <small class="text-muted">Posted by Anonymous on {{this.createdAt}}</small>
+            <hr>
+            {{/each}}
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus
             neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint
             natus.
