@@ -2,10 +2,13 @@ var db = require("../models");
 module.exports = function(app) {
   // Load home page
   app.get("/", function(req, res) {
-    res.render("home", {
-      titlePage: "Home",
-      javascript: "home.js",
-      css: "home.css"
+    db.storeInfo.findAll({}).then(function(database) {
+      res.render("home", {
+        titlePage: "Home",
+        javascript: "home.js",
+        css: "home.css",
+        dataInfo: database
+      });
     });
   });
   
