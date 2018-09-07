@@ -27,3 +27,8 @@ img{
     border-color: #c6a66a;
 }
 
+#QRImage {
+    width:100px;
+    height:100px;
+}
+

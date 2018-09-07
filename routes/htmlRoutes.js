@@ -46,7 +46,7 @@ module.exports = function(app) {
     });
   });
   // load register page
-  app.get("/review/", function(req, res) {
+  app.get("/review/:id", function(req, res) {
     db.storeInfo.findAll({}).then(function() {
       res.render("review", {
         titlePage: "Review",
@@ -58,7 +58,7 @@ module.exports = function(app) {
   //load results page
   app.get("/results/:routeName", function(req, res) {
     db.storeInfo
-      .findOne({ where: { routeName: req.params.routeName } })
+      .findOne({ where: { routeName: req.params.routeName }, include:[db.customerReviews] })
       .then(function(dbStoreInfo) {
         res.render("results", {
           titlePage: "Results",
