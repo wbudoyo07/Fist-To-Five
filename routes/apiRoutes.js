@@ -45,7 +45,7 @@ module.exports = function (app) {
     }).then(function() {
     //  console.log("store the new id:",database.id);
       createQR("https://localhost:8080/review/"+storeRoute);
->
+
       // console.log("would have excuted the createQR function");
     });
 
