@@ -1,14 +1,16 @@
 var db = require("../models");
-// var QRcode = require("qrcode");
-// var fs = require("fs");
+var QRcode = require("qrcode");
+var fs = require("fs");
 var passport = require("../config/passport");
+var multer = require("multer");
+var path = require("path");
 
 
 module.exports = function (app) {
 
-  // var storeID;
+  var storeID;
   var storeRoute;
-  // var base64Data;
+  var base64Data;
   // GET the information data from login user
   app.get("/api/login", function (req, res) {
     res.json(req.user);
@@ -74,7 +76,7 @@ module.exports = function (app) {
           id: storeID
         }
 
-      }).then(function(database) {
+      }).then(function() {
 
         writeQRtoFile();
       });
