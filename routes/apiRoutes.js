@@ -11,11 +11,15 @@ module.exports = function (app) {
   var storeID;
   var storeRoute;
   var base64Data;
+  var imgPath; 
+
 
   var storage = multer.diskStorage({
     destination: "./public/images/profileImgs",
     filename: function(req, file, next) {
-      next(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
+      imgPath = file.fieldname + "-" + Date.now() + path.extname(file.originalname);
+      next(null, imgPath);
+      
     }
   });
 
@@ -47,28 +51,22 @@ module.exports = function (app) {
 
   // Create a new owner's information
   app.post("/api/register",upload, function (req, res) {
-   // res.send("connected");
+    
     //these work
-    console.log("fname:",req.body.fname);
-    console.log("price:",req.body.priceNumber);
-  //  console.log("lname", req.boy.lname);
-    //need to pass to sequalize
-    storeRoute = req.body.routeName;
+    console.log("priceNumber",req.body.priceNumber);
+    console.log("price", req.body.price);
+    storeRoute = req.body.fname + req.body.lname;
+    console.log("storeRoute", storeRoute);
+
     
     db.storeInfo.create(req.body).then(function (database) {
-   //    res.json(database);
-   //   console.log("fname2:", req.body.fname);
-   //   console.log("database:", database);
-    //  console.log("routeName:",storeRoute);
-      res.redirect(307,"/api/login");
-    //  console.log("store the new id:",database.id);
+    //    res.json(database);
+      storeID = database.id;
+      res.redirect("/login");
     }).then(function() {
-    //  console.log("store the new id:",database.id);
-      createQR("https://localhost:8080/review/"+storeRoute);
-
-      // console.log("would have excuted the createQR function");
+    
+      createQR("https://localhost:8080/review/"+storeID);
     });
-
   });
 
   // Create a new owner's information
@@ -86,12 +84,31 @@ module.exports = function (app) {
       base64Data = imgData.replace(/^data:image\/png;base64,/, "");
       db.storeInfo.update({
         QRcode: imgData
-      }, {
+      }, 
+      {
         where: {
           id: storeID
         }
       }).then(function() {
-        writeQRtoFile();
+        db.storeInfo.update({
+          routeName: storeRoute
+        }, 
+        {
+          where: {
+            id: storeID
+          }
+        }).then(function (){
+          db.storeInfo.update({
+            img: "../images/profileImgs/" + imgPath
+          }, 
+          {
+            where: {
+              id: storeID
+            }
+          }).then(function () {
+            writeQRtoFile();
+          })
+        })
       });
     });
   }

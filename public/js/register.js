@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  console.log("connected");
+
+  console.log("connected");/*
   $("#submit-register").submit(function(event) {
     event.preventDefault();
     console.log("submit button worked");
@@ -19,7 +20,7 @@ $(document).ready(function() {
 
     formData.append("fname",fname);
     formData.append("lname",lname);
-   // formData.append("routeName",routeName);
+    formData.append("routeName",routeName);
     formData.append("email",email);
     formData.append("password",password);
     formData.append("address",address);
@@ -30,7 +31,7 @@ $(document).ready(function() {
     $.ajax({
       url: "/api/register",
       type: "POST",
-      data: formData + routeName,
+      data: formData,
       processData: false,
       contentType: false,
       sucess: function(r) {
@@ -63,5 +64,6 @@ $(document).ready(function() {
     });
     */
   });
-});
+  */
+
 
