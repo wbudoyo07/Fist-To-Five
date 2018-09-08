@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  alert("Test");
+  
   $("#submit-review").click(function(event) {
     event.preventDefault();
     var currentUrl = window.location.pathname; // return segment1/segment2/segment3/segment4
