@@ -32,6 +32,7 @@ body {
     background-color: #c6a66a;
 } */
 .card-body{
+    width:97%;
     background-color: white;
 }
 #masseuse-name{

@@ -17,10 +17,10 @@
           <div id="review-container">
             {{#each dataInfo.customerReviews}}
             <p>{{this.textReview}}</p>
-            <small class="text-muted">Posted by Anonymous on {{this.createdAt}}</small>
+            <small class="text-muted">Posted by {{this.fname}} {{this.lname}} on {{this.createdAt}}</small>
             <hr>
             {{/each}}
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus
+          {{!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus
             neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint
             natus.
           </p>
@@ -37,7 +37,7 @@
             natus.
           </p>
           <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-          <hr>
+          <hr> --}}
           {{!-- <a href="review" id="button" class="btn btn-secondary btn-lg btn-block">Leave a Review</a> --}}
         </div>
       </div>

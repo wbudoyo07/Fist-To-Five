@@ -33,3 +33,10 @@ img{
     height:100px;
 }
 
+#profileImg {
+    display: inline-block;
+    float:left;
+    width:300px;
+    height:300px;
+    margin-right:10px;
+}

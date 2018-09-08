@@ -4,12 +4,13 @@
       <h1>{{titlePage}}</h1>
     </div>
         <div class="card-body">
-          <h1 class="card-title" id= "masseuse-name">{{dataInfo.fname}} {{dataInfo.lname}}</h1>
-           <h3 class="card-title">{{dataInfo.email}}</h3>
-          <h3 class="card-title">{{dataInfo.storeName}}</h3>
-           <h3 class="card-title">{{dataInfo.address}}</h3>
-            <img id ="QRImage" class="card-img-top img-fluid" src={{dataInfo.QRcode}} alt="">
-          <p class="card-text">{{dataInfo.description}}</p>
+          <img id ="profileImg" class="card-img-top img-fluid" src={{dataInfo.img}} alt="">
+          <h1 class="card-title" id= "masseuse-name">Full Name : {{dataInfo.fname}} {{dataInfo.lname}}</h1>
+           <h3 class="card-title">Email: {{dataInfo.email}}</h3>
+          <h3 class="card-title">Store Name: {{dataInfo.storeName}}</h3>
+           <h3 class="card-title">Address :{{dataInfo.address}}</h3>
+           <p class="card-text">Description: {{dataInfo.description}}</p>
+            <img id ="QRImage" class="card-img-top img-fluid" src={{dataInfo.QRcode}} alt="">   
       </div>
     </div>
 
