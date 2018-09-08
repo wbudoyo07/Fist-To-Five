@@ -3,10 +3,11 @@
       <div class="w3-container" id="profTitle">
         <img class="pull-left profPic" src={{dataInfo.img}} alt="hello">
         <div class="card-body" id= "masseuse-name">
-        <h1 class="card-header">{{dataInfo.fname}} {{dataInfo.lname}}</h1>
-        <h3>{{dataInfo.storeName}}</h3>
-        <h4>$ {{dataInfo.price}}</h4>
-        <p>{{dataInfo.description}}</p>
+        <h1 class="card-header">Full name: {{dataInfo.fname}} {{dataInfo.lname}}</h1>
+        <h3>Store Name: {{dataInfo.storeName}}</h3>
+        <h3>Address: {{dataInfo.address}}</h3>
+        <h4>Price:  ${{dataInfo.price}}</h4>
+        <p>Description: {{dataInfo.description}}</p>
         </div>
       </div>
      
@@ -17,7 +18,7 @@
           <div id="review-container">
             {{#each dataInfo.customerReviews}}
             <p>{{this.textReview}}</p>
-            <small class="text-muted">Posted by Anonymous on {{this.createdAt}}</small>
+            <small class="text-muted">Posted by <strong>{{this.fname}} {{this.lname}}</strong> on {{this.createdAt}}</small>
             <hr>
             {{/each}}
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus
@@ -25,18 +26,6 @@
             natus.
           </p>
           <small class="text-muted">Posted by Anonymous on {{dataInfo.0.createdAt}}</small>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus
-            neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint
-            natus.
-          </p>
-          <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus
-            neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint
-            natus.
-          </p>
-          <small class="text-muted">Posted by Anonymous on 3/1/17</small>
           <hr>
           {{!-- <a href="review" id="button" class="btn btn-secondary btn-lg btn-block">Leave a Review</a> --}}
         </div>
