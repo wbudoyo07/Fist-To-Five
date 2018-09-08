@@ -1,7 +1,7 @@
 $(document).ready(function() {
   console.log("Connected to Home page");
   //Trigger event when press enter
-  $("#searchBar").on("keypress", function(event) {
+  $("#inputSearchBar").on("keypress", function(event) {
     var userInput = $("#inputSearchBar").val().trim().replace(/\s+/g, "").toLowerCase();
     if (event.keyCode === 13) {
       console.log(userInput);

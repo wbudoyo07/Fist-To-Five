@@ -4,6 +4,7 @@ h1,h2,h3,h4,h5,h6 {
 body {
     background-color: #262625;
 }
+
 #results-container{
     background-color: #c6a66a;
     width: 90%; 
@@ -20,12 +21,12 @@ body {
     margin-left: 15px;
     margin-right: 50px;
     padding: 50px;
-    
 }
 .profPic {
     width: 35%;
     padding: 10px;
     margin-top: 0px;
+
 }
 /* #review-container{
     float: right;
@@ -37,9 +38,19 @@ body {
 #masseuse-name{
     font-weight: bold;
     border-bottom: none;
+    overflow: auto
+}
+#review-stuff{
+    width: 100%;
+    margin-top: 10px;
+    background-color: white;
+    /* margin-left: 15px; */
+    margin-right: 600px;
+    padding: 40px;
+
 }
 #review-container{
-    margin-top: 10px
+    margin-top: 10px;
 }
 #button{
     background-color: #c6a66a;
