@@ -18,12 +18,20 @@ header {
     padding-top: 50px;
     background-color: white;
 }
-
-#card-image{
+#image-container{
+    width: 300px;
     height: 200px;
-    width: 200px;
+    overflow: hidden;
+}
+#card-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 10px;
+    /* margin-bottom: 100px */
 }
 .card{
     background-color: lightgray;
-}
-
+}       
