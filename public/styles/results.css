@@ -7,7 +7,7 @@ body {
 
 #results-container{
     background-color: #c6a66a;
-    width: 90%; 
+    width: 960px; 
     padding: 5px;
     margin-top: 30px;
     margin-left: auto;  
@@ -40,17 +40,10 @@ body {
     border-bottom: none;
     overflow: auto
 }
-#review-stuff{
-    width: 100%;
-    margin-top: 10px;
-    background-color: white;
-    /* margin-left: 15px; */
-    margin-right: 600px;
-    padding: 40px;
 
-}
 #review-container{
     margin-top: 10px;
+    min-width: 880px;
 }
 #button{
     background-color: #c6a66a;
