@@ -60,7 +60,10 @@ module.exports = function (app) {
     //these work
     console.log("priceNumber",req.body.priceNumber);
     console.log("price", req.body.price);
+    req.body.fname = req.body.fname.trim();
+    req.body.lname = req.body.lname.trim();
     storeRoute = req.body.fname + req.body.lname;
+    storeRoute =storeRoute.replace(/\s+/g, "").toLowerCase();
     console.log("storeRoute", storeRoute);
 
     
