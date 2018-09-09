@@ -1,8 +1,6 @@
-.card{
-    background-color: #262625,  
-}
-.card-body {
-background-color: #262625,
+.login-form {
+    width: 340px;
+    margin: 50px auto;
 }
 .login-form form {
     margin-bottom: 15px;
