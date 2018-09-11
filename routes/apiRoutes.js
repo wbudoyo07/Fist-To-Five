@@ -73,7 +73,7 @@ module.exports = function (app) {
       res.redirect("/login");
     }).then(function() {
     
-      createQR("https://fist-to-five.herokuapp.com/review/"+storeID);
+      createQR("https://guarded-depths-34740.herokuapp.com/ "+storeID);
     });
   });
 
