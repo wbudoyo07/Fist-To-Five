@@ -5,6 +5,9 @@ Users can independently go to the site without a QR code, however, as a form of 
 QR Codes as well as items will be stored in mysql. App will be written using handlebars. 
 
 ## Group Members:
+@Jdelorim
+@klytch
+@robxroy
 @Williambu07
 
 ## Tech
